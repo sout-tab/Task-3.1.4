@@ -19,18 +19,7 @@ public class RoleServiceImpl implements RoleService{
     }
 
     @Override
-    public List<Role> getAllRoles() {
+    public Set<Role> getAllRoles() {
         return roleDao.getAllRoles();
-    }
-
-    @Override
-    public Set<Role> findRolesByName(String roleName) {
-        Set<Role> roles = new HashSet<>();
-        for (Role role : getAllRoles()) {
-            if (roleName.contains(role.getName())) {
-                roles.add(role);
-            }
-        }
-        return roles;
     }
 }
